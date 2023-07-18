@@ -1,0 +1,19 @@
+_format_version: "3.0"
+_transform: true
+#this example uses all 4 plugins (no key auth) at once.
+services:
+  - host: cdn.islamic.network
+  #api.7x.ax
+  #cdn.islamic.network #/quran/someedition
+    name: example_service
+    port: 80
+    protocol: http
+    routes:
+    - name: example_route
+      paths:
+      - /mock
+      strip_path: true
+plugins:
+- name: xml-json-transformer
+  config:
+    enabled: true
