@@ -4,7 +4,7 @@ XML to JSON custom plugin for Kong 3.3.0 on Docker.
 
 run:
 ```
-docker build    --build-arg KONG_BASE="kong:3.3"    --build-arg PLUGINS="bundled,xml-json-transformer"    --tag "ekong2" .  
+docker build    --build-arg KONG_BASE="kong:3.3"    --build-arg PLUGINS="bundled,xml-json-transformer"    --tag "image_name" .  
 ```
 to build the container using the dockerfile provided to install dependencies for the XML2JSON plugin.
 
@@ -28,7 +28,7 @@ docker run --name kong-dbless-gatewaytest \
  -v "$(pwd)/plugins:/plugins" \
  -p 8000:8000 \
  -p 8001:8001 \
-ekong2
+image_name
 ```
 
 works alongside the plugins provided by Kong.
