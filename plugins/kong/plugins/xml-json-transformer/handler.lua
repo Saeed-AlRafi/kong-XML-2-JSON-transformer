@@ -7,12 +7,12 @@ local handler = require("xmlhandler.tree")
 local check = false
 
 
-local XMLJsonTransformerHandler = {
+local XML2JsonHandler = {
   PRIORITY = 801,
   VERSION = kong_meta.version,
 }
 
-function XMLJsonTransformerHandler:header_filter(conf)
+function XML2JsonHandler:header_filter(conf)
   if kong.response.get_header("Content-Type") == "application/xml" then 
     check = true
     kong.response.clear_header("Content-Type")
@@ -20,7 +20,7 @@ function XMLJsonTransformerHandler:header_filter(conf)
   end
 end
 
-function XMLJsonTransformerHandler:body_filter(conf) 
+function XML2JsonHandler:body_filter(conf) 
   if check then
     local body = kong.response.get_raw_body()
     if body then
@@ -39,4 +39,4 @@ function Transform(body)
   return json_text
 end
 
-return XMLJsonTransformerHandler
+return XML2JsonHandler

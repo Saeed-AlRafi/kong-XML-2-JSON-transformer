@@ -20,7 +20,7 @@ local function validate_colon_headers(pair)
 end
 
 return {
-  name = "xml-json-transformer",
+  name = "xml2json",
   fields = {
     { protocols = typedefs.protocols_http },
     { config = {

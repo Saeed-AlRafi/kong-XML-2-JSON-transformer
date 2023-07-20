@@ -32,3 +32,6 @@ ekong2
 ```
 
 works alongside the plugins provided by Kong.
+
+have plugin file similar to how it is here.
+plugins>kong>plugins>xml-json-transformer
