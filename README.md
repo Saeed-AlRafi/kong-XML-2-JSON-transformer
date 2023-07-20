@@ -6,7 +6,7 @@ run:
 ```
 docker build    --build-arg KONG_BASE="kong:3.3"    --build-arg PLUGINS="bundled,xml-json-transformer"    --tag "image_name" .  
 ```
-to build the container using the dockerfile provided to install dependencies for the XML2JSON plugin.
+to build the container image using the dockerfile provided to install dependencies for the XML2JSON plugin.
 
 run:
 ```
