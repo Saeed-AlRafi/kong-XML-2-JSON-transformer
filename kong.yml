@@ -1,6 +1,7 @@
 _format_version: "3.0"
 _transform: true
 services:
+  #- host: api.7x.ax #/timezone/v1/bycoordinates/24.54940,45.58403 
   - host: cdn.islamic.network #/quran/someedition
     name: example_service
     port: 80
@@ -14,3 +15,42 @@ plugins:
 - name: xml-json-transformer
   config:
     enabled: true
+- name: rate-limiting
+  service: example_service
+  config:
+    minute: 2
+    error_message: "API limit reached."
+    policy: local
+- name: proxy-cache
+  service: example_service
+  config:
+    response_code:
+    - 200
+    request_method:
+    - GET
+    content_type:
+    - application/json
+    cache_ttl: 900 #in seconds
+    strategy: memory
+- name: request-transformer
+  service: example_service 
+  config: 
+    add:
+      headers: ["apikey:2741d2943d24d51231d1fad01b2127d6"]
+- name: response-transformer
+  service: example_service 
+  config:
+    add: 
+      json:
+      - value:52
+      - otherValue:25
+      - Kong:true
+      - string:string
+      json_types:
+      - number
+      - number
+      - boolean
+      - string
+    remove:
+      json:
+      - code

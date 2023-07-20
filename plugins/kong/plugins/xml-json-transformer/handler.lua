@@ -8,7 +8,7 @@ local check = false
 
 
 local XMLJsonTransformerHandler = {
-  PRIORITY = 799,
+  PRIORITY = 801,
   VERSION = kong_meta.version,
 }
 
