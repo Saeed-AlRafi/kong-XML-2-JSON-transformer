@@ -1,8 +1,21 @@
-# kong XML2JSON
+# kong XML 2 JSON transformer
 
-XML to JSON custom plugin for Kong 3.3.0 on Docker.
+updated XML to JSON custom plugin for Kong 3.3.0 on Docker.
+Original plugin: https://github.com/svenwal/kong-plugin-xml-json-transformer
 
-run:
+## What:
+This plugin will convert XML objects from upstream and convert them to JSON before sending them downstream.
+
+## Why:
+Some people are just lazy and can't be bothered to change their XML endpoints to JSON
+
+## How:
+The plugin starts by checking the "Content-Type" header. if it is "application/xml" then it will change it to "application/json" and proceed with converting the body.
+
+
+
+
+## Setup:
 ```
 docker build    --build-arg KONG_BASE="kong:3.3"    --build-arg PLUGINS="bundled,xml-json-transformer"    --tag "image_name" .  
 ```
@@ -35,3 +48,6 @@ works alongside the plugins provided by Kong.
 
 have plugin file similar to how it is here.
 plugins>kong>plugins>xml-json-transformer
+
+### disclaimer:
+I am a beginer and this code is probably not the greatest.
