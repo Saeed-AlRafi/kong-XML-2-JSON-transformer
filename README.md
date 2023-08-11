@@ -47,7 +47,7 @@ image_name
 works alongside the plugins provided by Kong.
 
 have plugin file similar to how it is here.
-plugins>kong>plugins>xml-json-transformer
+plugins>kong>plugins>xml-2-json-transformer
 
 ### disclaimer:
 I am a beginer and this code is probably not the greatest.
