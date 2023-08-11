@@ -17,7 +17,7 @@ The plugin starts by checking the "Content-Type" header. if it is "application/x
 
 ## Setup:
 ```
-docker build    --build-arg KONG_BASE="kong:3.3"    --build-arg PLUGINS="bundled,xml-json-transformer"    --tag "image_name" .  
+docker build    --build-arg KONG_BASE="kong:3.3"    --build-arg PLUGINS="bundled,xml-2-json-transformer"    --tag "image_name" .  
 ```
 to build the container image using the dockerfile provided to install dependencies for the XML2JSON plugin.
 
