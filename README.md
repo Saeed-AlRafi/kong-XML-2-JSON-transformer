@@ -50,4 +50,4 @@ have plugin file similar to how it is here.
 plugins>kong>plugins>xml-2-json-transformer
 
 ### disclaimer:
-I am a beginer and this code is probably not the greatest.
+I am a beginner and this code is probably not the greatest.
