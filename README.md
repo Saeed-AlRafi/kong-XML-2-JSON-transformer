@@ -29,7 +29,7 @@ docker run --name kong-dbless-gatewaytest \
  -e "KONG_DATABASE=off" \
  -e "KONG_DECLARATIVE_CONFIG=/kong/declarative/kong.yml" \
  -e "KONG_LUA_PACKAGE_PATH=/plugins/?.lua" \
- -e "KONG_PLUGINS=bundled,xml-json-transformer" \
+ -e "KONG_PLUGINS=bundled,xml-2-json-transformer" \
  -e "KONG_PROXY_ACCESS_LOG=/dev/stdout" \
  -e "KONG_ADMIN_ACCESS_LOG=/dev/stdout" \
  -e "KONG_PROXY_ERROR_LOG=/dev/stderr" \
