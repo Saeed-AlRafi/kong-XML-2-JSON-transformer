@@ -16,6 +16,7 @@ function XML2JsonHandler:header_filter(conf)
   if kong.response.get_header("Content-Type") == "application/xml" then 
     check = true
     kong.response.clear_header("Content-Type")
+    kong.response.clear_header("Content-Length") -- kong.response.set_raw_body(body) can't clear the Content-Length header and would only work for responses without a content header if we did not clear it here.
     kong.response.set_header("Content-Type", "application/json", string)
   end
 end
